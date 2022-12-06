@@ -1,0 +1,101 @@
+.main__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .main__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .main__logo {
+      margin-top: 2rem;
+      position: relative;
+      right: 100%;
+    }
+    .main__heading {
+      width: 450px;
+      height: 60px;
+      margin-top: 2rem;
+    
+      background: var(--color-1);
+      border-radius: 5px;
+    
+      font-weight: 600;
+      font-size: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+    }
+    .table__container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .table__content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 22rem;
+      margin-top: 4rem;
+    }
+    .table__item {
+      display: flex;
+      flex-direction: column;
+      row-gap: 2rem;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .table__title {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: #000000;
+    }
+    .table__item-list {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 18px;
+      color: #222730;
+    }
+    .table__item-list li {
+      margin-bottom: 2.5rem;
+    }
+    
+    /*=============== BREAKPOINTS ===============*/
+    /* For large devices */
+    @media screen and (max-width: 992px) {
+      .main__logo {
+        right: 60%;
+      }
+    
+      .table__content {
+        column-gap: 10rem;
+        margin-top: 3rem;
+      }
+      .main__heading {
+        width: 350px;
+        height: 50px;
+    
+        font-size: 26px;
+      }
+    }
+    @media screen and (max-width: 576px) {
+      .main__logo {
+        right: 30%;
+      }
+      .table__content {
+        column-gap: 1.5rem;
+        margin-top: 3rem;
+      }
+      .main__heading {
+        width: 280px;
+        height: 40px;
+        font-size: 20px;
+      }
+    }
+    

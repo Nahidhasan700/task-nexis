@@ -1,0 +1,22 @@
+.btn:hover{
+background-color: rgb(253, 253, 253);
+color: blue;
+}
+
+.loginHeading{
+    font-style: bold;
+    font-weight: 600px;
+    margin: 100px;
+}
+.loginButton{
+    margin: 50px;
+
+}
+
+
+.form-control {
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-radius: 0;
+}

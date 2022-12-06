@@ -1,0 +1,27 @@
+.phoneCode{
+    width: 80px;
+}
+.phoneNumber{
+    width: 300px;
+}
+
+.phoneInput{
+margin-left: -80px;
+}
+
+
+    
+ .SignUp2Heading{
+        font-style: bold;
+        font-weight: 600px;
+        margin: 100px;
+}
+    .nextStepBackButton{
+        margin: 100px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    
+    }
+    
+    
+  
