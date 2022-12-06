@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import { Link } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [email,setEmail] = useState("");
+  const [password,setPassword] = useState("");
 
   const handleLogin = (event) => {
     event.preventDefault();
 
     const user = {
-      email: "abc@example.com",
-      password: "SuperSecretPassword",
+      email: email,
+      password: password,
     };
 
     fetch("https://test.nexisltd.com/login", {
@@ -21,10 +23,19 @@ const Login = () => {
       },
       body: JSON.stringify(user),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if(res.status === 200) {  
+          navigate("/AttendanceForm");
+          }
+          else{
+            console.log("User not found !");
+          }
+          return  res.json();
+      }  
+      )  
       .then((data) => {
-        localStorage.setItem("ultimateAccessToken", data.access_token);
-        navigate("/AttendanceForm");
+        window.localStorage.setItem("Token", data.access_token);
+        
       });
   };
   return (
@@ -42,6 +53,7 @@ const Login = () => {
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             required
+            onChange={(e)=>setEmail(e.target.value) }
           />
 
           <label for="exampleInputPassword1" class="form-label"></label>
@@ -52,6 +64,8 @@ const Login = () => {
             id="exampleInputPassword1"
             pattern=".{8,}"
             required
+            onChange={(e)=>setPassword(e.target.value) }
+
           />
           <div id="PasswordHelp" className="form-text ps-1 ms-5">
             Your Password must be atleast 8 character

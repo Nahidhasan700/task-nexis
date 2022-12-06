@@ -9,7 +9,7 @@ const Attendance = () => {
     useEffect(() => {
         fetch('https://test.nexisltd.com/test', {
             headers: {
-                authorization: `bearer ${localStorage.getItem('ultimateAccessToken')}`
+                authorization: `bearer ${localStorage.getItem('Token')}`
             }
         })
             .then(res => res.json())
@@ -69,7 +69,7 @@ const Attendance = () => {
                         {
                             attendanceInfoArray.map((info, idx) =>
                                 <tr key={info.id} className="hover">
-                                    {/* <th>{idx + 1}</th> */}
+                                  
                                     <td>{info?.attendanceArrayDateList[25]}</td>
                                     <td>{info?.name}</td>
                                     <td className='capitalize'>{info?.attendanceArrayList[25]?.status}</td>
